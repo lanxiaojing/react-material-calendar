@@ -1,0 +1,32 @@
+{
+  "name": "rc-material-calendar",
+  "version": "1.0.0",
+  "description": "material design 的 日历",
+  "main": "src/components/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanxiaojing/react-material-calendar.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "material",
+    "design",
+    "calendar"
+  ],
+  "author": {
+    "name": "lanxiaojing",
+    "email": "547418453@qq.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
+  "bugs": {
+    "url": "https://github.com/lanxiaojing/react-material-calendar/issues"
+  },
+  "homepage": "https://github.com/lanxiaojing/react-material-calendar#readme"
+}

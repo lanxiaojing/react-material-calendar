@@ -1,0 +1,76 @@
+.daysContainer {
+    .weekLabel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 500;
+        height: 20px;
+        margin-top: 10px;
+        line-height: 15px;
+        opacity: 0.5;
+        text-align: center;
+    }
+    .daysContent {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        .daysContainerPos {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            font-weight: 400;
+            height: 228px;
+            line-height: 2;
+            position: relative;
+            text-align: center;
+            .dayItem {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 34px;
+                margin-bottom: 2px;
+                width: 42px
+            }
+            button {
+                background: inherit;
+                border: none;
+            }
+        }
+    }
+}
+
+.btn {
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 34px;
+    margin-bottom: 2px;
+    width: 42px;
+}
+
+.btn_label_default {
+    color: rgba(0, 0, 0, 0.870588);
+    align-self: center;
+    &:hover {
+        color: rgb(0, 188, 212);
+        width: 70%;
+        padding-bottom: 10px;
+        border-bottom: 3px solid rgb(0, 188, 212);
+    }
+}
+
+.btn_selected {
+    color: #eee;
+    width: 60%;
+    padding-bottom: 0;
+    border-bottom: 3px solid rgb(0, 188, 212);
+}
+
+.btn_disabled {
+    color: #eee;
+}
