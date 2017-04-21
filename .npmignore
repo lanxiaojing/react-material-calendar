@@ -1,8 +1,16 @@
 src
 node_modules
+example
+
+webpack.config.js
+server.js
+
+.gitignore
+.babelrc
 
 .git
 .npmrc
+
 
 npm-debug.log
 .DS_STORE
