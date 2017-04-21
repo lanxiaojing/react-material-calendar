@@ -1,0 +1,8 @@
+src
+node_modules
+
+.git
+.npmrc
+
+npm-debug.log
+.DS_STORE
