@@ -40,3 +40,13 @@ npm install react-material-calendar
 - css 管理
 - webpack 开发
 - 剩下的回调
+
+
+### 开发注意事项
+
+最好build前先执行 
+```
+npm run clean:lib
+```
+清空lib文件夹
+
