@@ -9,30 +9,36 @@ const allowedEnvs = ['dev', 'test', 'dist'];
 const port = 8800;
 
 let webpack = require('webpack');
-let BowerWebpackPlugin = require('bower-webpack-plugin');
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const baseConfig = {
-    entry: path.join(__dirname, 'example', 'src', 'index.jsx'),
+    entry: './example/src/index.jsx',
     output: {
         filename: 'bundle.js'
     },
-
     module: {
-        use: [
+        rules: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'babel?presets[]=es2015,presets[]=react,presets[]=stage-0,presets[]=stage-2,presets[]=stage-3'
+                exclude: /(node_modules)/,
+                loader: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0,presets[]=stage-2,presets[]=stage-3'
             },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
             },
             {
-                test: /\.less$/,
-                loader: 'style-loader!css-loader!less-loader'
+                test: /\.(less|css)$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'less-loader']
+                })
             }
         ]
     },
+    plugins: [
+        new ExtractTextPlugin("style.css")
+    ],
     devServer: {
         proxy: {
 
@@ -55,16 +61,13 @@ if (args._.length > 0 && arg._.indexOf('start') !== -1) {
         entry: [
             'webpack-dev-server/client?http://127.0.0.1:' + port,
             'webpack/hot/only-dev-server',
-            './src/index'
+            './example/index.html'
         ],
         cache: true,
         devtool: 'eval-source-map',
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
             new webpack.NoErrorsPlugin(),
-            new BowerWebpackPlugin({
-                searchResolveModulesDirectories: false
-            })
         ]
     });
     config.module.loaders.push({

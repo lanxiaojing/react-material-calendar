@@ -36,11 +36,10 @@ npm install react-material-calendar
 
 ### todo
 
-- range picker
-- css 管理
+- 样式文件引入的策略和用户自定义样式的策略（important）
+- range picker（需要添加的功能）
 - webpack 开发
-- 剩下的回调
-
+- 剩下的回调（返回哪些数据等）
 
 ### 开发注意事项
 

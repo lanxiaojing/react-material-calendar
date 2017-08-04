@@ -1,14 +1,15 @@
 {
   "name": "rc-material-calendar",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "material design 的 日历",
-  "main": "./lib/index.js",
+  "main": "lib/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean:lib": "./node_modules/.bin/rimraf lib",
-    "build": "npm run clean:lib && ./node_modules/.bin/babel src --souece-maps --out-dir lib",
+    "build": "npm run clean:lib && ./node_modules/.bin/babel src --copy-files --souece-maps --out-dir lib",
     "develop": "node server.js --env=dist"
   },
+  "prepublish": "npm run build",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lanxiaojing/react-material-calendar.git"
@@ -26,7 +27,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
   },
   "bugs": {
     "url": "https://github.com/lanxiaojing/react-material-calendar/issues"
@@ -46,6 +49,9 @@
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
     "open": "^0.0.5",
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",

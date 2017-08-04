@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import style from './DatePicker.less';
 
-class DatePicker extends React.Component {
+class DatePicker extends Component {
     constructor() {
         super();
     }
