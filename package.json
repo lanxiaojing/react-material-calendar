@@ -2,12 +2,11 @@
   "name": "rc-material-calendar",
   "version": "1.0.8",
   "description": "material design 的 日历",
-  "main": "lib/index",
+  "main": "./src/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean:lib": "./node_modules/.bin/rimraf lib",
-    "build": "npm run clean:lib && ./node_modules/.bin/babel src --copy-files --souece-maps --out-dir lib",
-    "develop": "node server.js --env=dist"
+    "build": "node server.js --env=build",
+    "develop": "node server.js --env=dev"
   },
   "prepublish": "npm run build",
   "repository": {
@@ -17,8 +16,7 @@
   "keywords": [
     "react",
     "react-component",
-    "material",
-    "design",
+    "material design",
     "calendar"
   ],
   "author": {
@@ -28,6 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "moment": "^2.18.1",
+    "open": "0.0.5",
+    "prop-types": "^15.5.10",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },
@@ -40,16 +40,19 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bower-webpack-plugin": "^0.1.9",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
     "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
     "open": "^0.0.5",

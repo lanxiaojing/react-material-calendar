@@ -1,7 +1,9 @@
-export { default as Calendar } from './calendar';
-// import DatePicker from './datePicker';
+import React from 'react';
 
-// export default {
-//     Calendar,
-//     DatePicker
-// }
+import Index from './routes/index.js';
+
+import { render } from 'react-dom';
+
+var element = document.querySelector('#app');
+
+render(<Index />, element);
